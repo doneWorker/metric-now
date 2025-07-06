@@ -1,0 +1,405 @@
+@use "sass:list";
+@use "sass:math";
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+$border-radius-sizes: (
+  xs: 2px,
+  sm: 4px,
+  md: 6px,
+  lg: 8px,
+  xl: 16px,
+  xxl: 24px,
+  full: 50%,
+);
+@each $name, $value in $border-radius-sizes {
+  .rounded-#{$name} {
+    border-radius: $value;
+  }
+}
+
+$border-sizes: 1, 2, 3, 4, 5;
+
+@each $size in $border-sizes {
+  .border-#{$size} {
+    border: #{$size}px solid;
+  }
+
+  .border-t-#{$size} {
+    border-top: #{$size}px solid;
+  }
+
+  .border-r-#{$size} {
+    border-right: #{$size}px solid;
+  }
+
+  .border-b-#{$size} {
+    border-bottom: #{$size}px solid;
+  }
+
+  .border-l-#{$size} {
+    border-left: #{$size}px solid;
+  }
+}
+
+.border-black {
+  border-color: var(--font-color);
+}
+.border-none {
+  border: none;
+}
+.bg-primary {
+  background: var(--primary-color);
+}
+
+/* Colors */
+$red-colors: (
+  100: #fef2f2,
+  200: #fecaca,
+  300: #fca5a5,
+  400: #f87171,
+  500: #ef4444,
+  600: #dc2626,
+  700: #b91c1c,
+  800: #991b1b,
+);
+
+@each $shade, $value in $red-colors {
+  .bg-red-#{$shade} {
+    background-color: #{$value};
+  }
+  .outline-red-#{$shade} {
+    outline-color: #{$value};
+  }
+  .hover-bg-red-#{$shade}:hover {
+    background-color: #{$value};
+  }
+
+  .text-red-#{$shade} {
+    color: #{$value};
+  }
+
+  .border-red-#{$shade} {
+    border-color: #{$value};
+  }
+}
+
+$gray-colors: (
+  50: #f9fafb,
+  100: #f6f6f6,
+  200: #e5e7eb,
+  300: #d1d5db,
+  400: #9ca3af,
+  500: #6b7280,
+  600: #4b5563,
+  700: #374151,
+  800: #1f2937,
+);
+@each $shade, $value in $gray-colors {
+  .bg-gray-#{$shade} {
+    background-color: #{$value};
+  }
+  .hover-bg-gray-#{$shade}:hover {
+    background-color: #{$value};
+  }
+  .text-gray-#{$shade} {
+    color: #{$value};
+  }
+  .border-gray-#{$shade} {
+    border-color: #{$value};
+  }
+}
+
+$yellow-colors: (
+  100: #fef9c3,
+  200: #fef08a,
+  300: #fde047,
+  400: #facc15,
+  500: #eab308,
+  600: #ca8a04,
+  700: #a16207,
+  800: #854d0e,
+);
+
+@each $shade, $value in $yellow-colors {
+  .bg-yellow-#{$shade} {
+    background-color: #{$value};
+  }
+  .hover-bg-yellow-#{$shade}:hover {
+    background-color: #{$value};
+  }
+  .text-yellow-#{$shade} {
+    color: #{$value};
+  }
+  .border-yellow-#{$shade} {
+    border-color: #{$value};
+  }
+}
+
+$blue-colors: (
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #3b82f6,
+  600: #2563eb,
+  700: #1d4ed8,
+  800: #1e40af,
+  900: #1e3a8a,
+);
+
+:root {
+  @each $shade, $value in $blue-colors {
+    --blue-#{$shade}: #{$value};
+  }
+}
+
+@each $shade, $value in $blue-colors {
+  .bg-blue-#{$shade} {
+    background-color: #{$value};
+  }
+  .outline-blue-#{$shade} {
+    outline-color: #{$value};
+  }
+  .hover-bg-blue-#{$shade}:hover {
+    background-color: #{$value};
+  }
+  .hover-outline-blue-#{$shade}:hover {
+    outline-color: #{$value};
+  }
+  .text-blue-#{$shade} {
+    color: #{$value};
+  }
+  .border-blue-#{$shade} {
+    border-color: #{$value};
+  }
+}
+
+.bg-white {
+  background: white;
+}
+.bg-white_o50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.bg-white_o75 {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.bg-white_o95 {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.border-white {
+  border-color: white;
+}
+.hover-bg-white:hover {
+  background-color: white;
+}
+.hover-text-white:hover {
+  color: white;
+}
+.bg-transparent {
+  background: transparent;
+}
+.bg-black {
+  background: black;
+}
+
+.text-white {
+  color: white;
+}
+$opacity-values: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+
+@each $value in $opacity-values {
+  .opacity-#{$value},
+  .hover-opacity-#{$value}:hover {
+    opacity: math.div($value, 100);
+  }
+}
+
+/* Line heights */
+@for $i from 3 through 10 {
+  .leading-#{$i} {
+    line-height: #{$i * 0.25}em;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.resize-none {
+  resize: none;
+}
+.resize-h {
+  resize: horizontal;
+}
+.resize-v {
+  resize: vertical;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Priority */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Priorities */
+$priority-names: low, medium, high, critical;
+$priority-colors: #4caf50, #2196f3, #ff9800, #f44336;
+$priority-bg-hover: #4caf4f11, #2195f30d, #ff99000e, #f443360f;
+
+@for $i from 1 through list.length($priority-names) {
+  $name: list.nth($priority-names, $i);
+  $color: list.nth($priority-colors, $i);
+  $bg-hover: list.nth($priority-bg-hover, $i);
+
+  .priority-#{$name} {
+    --dot-bg: #{$color};
+    --bg-hover: #{$bg-hover};
+  }
+
+  .color-priority-#{$name} {
+    color: $color;
+  }
+
+  .bg-priority-#{$name} {
+    background-color: #{$color};
+  }
+
+  .hover-bg-priority-#{$name} {
+    background-color: #{$bg-hover};
+  }
+}
+
+.priority {
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.5s, color 0.5s;
+}
+.priority.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+.priority:not(.active):hover {
+  background-color: var(--bg-hover);
+}
+.priority .dot {
+  background-color: var(--dot-bg);
+  box-shadow: 0 0 1px 1px white;
+}
+
+/* Shadows */
+$shadows: (
+  sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+  DEFAULT: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  "2xl": 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+  inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06),
+  none: none,
+);
+
+@each $name, $value in $shadows {
+  @if $name == DEFAULT {
+    .shadow {
+      box-shadow: #{$value};
+    }
+    .hover-shadow:hover {
+      box-shadow: #{$value};
+    }
+  } @else {
+    .shadow-#{$name} {
+      box-shadow: #{$value};
+    }
+    .hover-shadow-#{$name}:hover {
+      box-shadow: #{$value};
+    }
+  }
+}
+.shadow-card {
+  box-shadow: 0 0 10px 1px rgba(55, 55, 55, 0.1);
+}
+.hover-shadow-card:hover {
+  box-shadow: 0 0 10px 1px rgba(55, 55, 55, 0.1);
+}
+.shadow-none {
+  box-shadow: none;
+}
+
+/* Outlines */
+.outline-none {
+  outline: none;
+}
+$outline-width: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+@each $value in $outline-width {
+  .outline-#{$value} {
+    outline-width: #{$value}px;
+  }
+}
+.outline-transparent {
+  outline-color: transparent;
+}
+.outline-solid {
+  outline-style: solid;
+}
+.outline-dashed {
+  outline-style: dashed;
+}
+.outline-dotted {
+  outline-style: dotted;
+}
+.outline-double {
+  outline-style: double;
+}
+
+/* Background sizes */
+.bg-cover {
+  background-size: cover;
+}
+.bg-contain {
+  background-size: contain;
+}
+.object-contain {
+  object-fit: contain;
+}
+.object-cover {
+  object-fit: cover;
+}
+
+/* Filters */
+.backdrop-blur-xs {
+  backdrop-filter: blur(4px);
+}
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+.grayscale {
+  filter: grayscale(100%);
+}
+.hover-grayscale:hover {
+  filter: grayscale(100%);
+}

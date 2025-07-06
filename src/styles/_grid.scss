@@ -1,0 +1,22 @@
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+// Row span (optional, but handy)
+@for $i from 1 through 6 {
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+}
+
+.grid {
+  display: grid;
+}

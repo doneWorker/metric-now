@@ -1,0 +1,124 @@
+.button {
+  &.sm {
+    --padding: 5px;
+    --height: 25px;
+  }
+  &.md {
+    --padding: 5px 10px;
+    --height: 32px;
+  }
+  &.lg {
+    --padding: 7.5px;
+    --height: 40px;
+  }
+
+  &.rounded {
+    --radius: 50px;
+  }
+
+  &.blue {
+    --button-bg: #036cfc;
+    --button-bg-hover: #1456b3;
+    --button-color: white;
+  }
+  &.gray {
+    --button-bg: #f6f6f6;
+    --button-bg-hover: #eeebeb;
+    --button-color: var(--font-color);
+    --kbd-bg: rgba(0, 0, 0, 0.05);
+  }
+  &.red {
+    --button-bg: #ff4d4f;
+    --button-bg-hover: #d9363e;
+    --button-color: white;
+  }
+  &.primary {
+    --button-bg: #016bf9;
+    --button-bg-hover: #054dac;
+    --button-color: white;
+  }
+  &.secondary {
+    --button-bg: #f3f5fe;
+    --button-bg-hover: #dee2f4;
+    --button-color: #5a84cc;
+  }
+  &.black {
+    --button-bg: black;
+    --button-bg-hover: rgb(37, 36, 36);
+    --button-color: white;
+    --kbd-bg: rgba(255, 255, 255, 0.2);
+  }
+
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  height: var(--height);
+  padding: var(--padding);
+  line-height: 1.4;
+  font-size: var(--font-size);
+  border-radius: var(--radius, 8px);
+  transition: background-color 0.2s;
+
+  .start-icon {
+    margin-right: 10px;
+    line-height: inherit;
+  }
+
+  &.contained {
+    background: var(--button-bg);
+    color: var(--button-color);
+
+    &:hover {
+      background-color: var(--button-bg-hover);
+    }
+  }
+
+  &.outlined {
+    color: var(--button-bg);
+    background-color: white;
+    border: 1px solid var(--button-bg);
+
+    &:hover {
+      background-color: var(--button-bg-hover);
+      color: white;
+    }
+  }
+
+  .label {
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  &.has-start-icon .label {
+    text-align: start;
+  }
+
+  kbd {
+    pointer-events: none;
+    position: relative;
+    font-size: 15px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-family: sans-serif;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: var(--kbd-bg);
+
+    &:before {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      inset: 0;
+      opacity: 0;
+      box-shadow: 0 0 20px 2px var(--primary-color-hover);
+      transition: opacity 0.2s;
+    }
+
+    &.active::before {
+      opacity: 1;
+    }
+  }
+}

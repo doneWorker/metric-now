@@ -1,0 +1,95 @@
+.task-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+  overflow: hidden;
+  height: 45px;
+  border-radius: 7px;
+  padding: 0 8px;
+  background-color: var(--todo-item-bg);
+  border: 1px solid transparent;
+
+  &[class*="priority"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: var(--dot-bg);
+  }
+
+  &.overdue {
+    background-color: red;
+  }
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+
+    .extra {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  &.completed {
+    opacity: 0.9;
+
+    .title {
+      text-decoration: line-through;
+    }
+  }
+
+  .complete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-size: 0.8em;
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  /* EXPERIMENT */
+  &.in-progress {
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      animation: pulseDot 1s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+    }
+  }
+}

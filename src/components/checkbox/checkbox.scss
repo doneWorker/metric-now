@@ -1,0 +1,79 @@
+$border-radius: 4px;
+
+.checkbox {
+  cursor: pointer;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  font-size: 0;
+  border-radius: $border-radius;
+  transition: border 0.2s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0;
+    font-size: 0;
+    border-radius: $border-radius;
+    border: 2px solid var(--dot-bg, #ccc);
+    box-sizing: border-box;
+    transition: border 0.2s;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    display: block;
+    top: 0;
+    opacity: 0;
+    transform: scale(1.8);
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+  }
+
+  &:focus-within {
+    outline: 1px solid var(--primary-color);
+  }
+
+  &:hover {
+    border-color: #a4a1a1;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  & input:checked ~ .check {
+    opacity: 1;
+  }
+
+  .check {
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    opacity: 0;
+    border-radius: $border-radius;
+    background-color: var(--font-color);
+    transition: opacity 0.2s;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}

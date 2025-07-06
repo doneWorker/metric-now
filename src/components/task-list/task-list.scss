@@ -1,0 +1,43 @@
+body.dark .task-list {
+  --empty-color: white;
+
+  .empty h2 {
+    text-shadow: 1px 1px 0.5px black;
+  }
+}
+
+.task-list {
+  --delete-button-color: #f25c5c;
+  --delete-button-bg: #ffd6d6a8;
+  --star-button-color: #f1c63b;
+  --star-button-bg: #f1c63b30;
+  --todo-item-bg: white;
+  --empty-color: var(--body-color);
+  position: absolute;
+  bottom: 0;
+  top: 100px;
+  overflow: auto;
+  width: 100%;
+
+  :global(.dark) & {
+    --empty-color: white;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  color: var(--empty-color);
+}
+.empty .icon {
+  font-size: 85px;
+}

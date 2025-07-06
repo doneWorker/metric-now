@@ -1,0 +1,79 @@
+@use "sass:meta";
+
+$sizes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 28 30
+  31 32 48;
+$step: 2px;
+
+$props: (
+  "p": "padding",
+  "m": "margin",
+);
+
+$directions: (
+  "": "",
+  // all
+  "t": "-top",
+  "r": "-right",
+  "b": "-bottom",
+  "l": "-left",
+  "x": (
+    "-left",
+    "-right",
+  ),
+  "y": (
+    "-top",
+    "-bottom",
+  ),
+);
+
+// Margins and Paddings
+@each $short, $fullProp in $props {
+  @each $dirShort, $dirVal in $directions {
+    @each $size in $sizes {
+      $value: $size * $step;
+      $class: ".#{$short}#{$dirShort}-#{$size}";
+
+      #{$class} {
+        @if meta.type-of($dirVal) == "list" {
+          @each $d in $dirVal {
+            #{$fullProp}#{$d}: $value;
+          }
+        } @else if $dirVal == "" {
+          #{$fullProp}: $value;
+        } @else {
+          #{$fullProp}#{$dirVal}: $value;
+        }
+      }
+    }
+  }
+}
+
+// Top/Left/Bottom/Right
+$positions: top, right, bottom, left;
+
+// Pixel-based offset classes
+@each $dir in $positions {
+  @each $size in $sizes {
+    $value: $size * $step;
+    .#{$dir}-#{$size} {
+      #{$dir}: $value;
+    }
+  }
+}
+
+.inset-0 {
+  inset: 0;
+}
+
+// Gaps
+@each $size in $sizes {
+  $value: $size * $step;
+  .gap-#{$size} {
+    gap: $value;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,15 @@
+.tag {
+  --tag-bg: rgba(0, 0, 0, 0.3);
+  --tag-color: white;
+
+  width: -webkit-fit-content;
+  padding: 0 10px;
+  height: 20px;
+  display: inline;
+  line-height: 20px;
+  font-size: 0.75em;
+  border-radius: 25px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "theme:default",
+    "name": "Default",
+    "bg_url": null
+  },
+  {
+    "id": "theme:space",
+    "name": "Space",
+    "bg_url": "/theme/space.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:football",
+    "name": "Football",
+    "bg_url": "/theme/football.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:sky",
+    "name": "Sky",
+    "bg_url": "/theme/sky.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:field",
+    "name": "Field",
+    "bg_url": "/theme/field.jpg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:grass",
+    "name": "Grass",
+    "bg_url": "/theme/grass.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:beach",
+    "name": "Beach",
+    "bg_url": "/theme/beach.jpg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:road",
+    "name": "Road",
+    "bg_url": "/theme/road.jpeg"
+  },
+  {
+    "id": "theme:wind",
+    "name": "Parquet",
+    "bg_url": "/theme/parquet.jpeg"
+  },
+  {
+    "id": "theme:office",
+    "name": "Office",
+    "bg_url": "/theme/office.jpg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:nature1",
+    "name": "Nature (1)",
+    "bg_url": "/theme/nature-1.jpg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:nature2",
+    "name": "Nature (2)",
+    "bg_url": "/theme/nature-2.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:kitchen",
+    "name": "Kitchen",
+    "bg_url": "/theme/kitchen.jpeg"
+  },
+  {
+    "id": "theme:carengine",
+    "name": "Car Engine",
+    "bg_url": "/theme/car-engine.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:bricks",
+    "name": "Bricks",
+    "bg_url": "/theme/bricks.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:abstract1",
+    "name": "Abstract (1)",
+    "bg_url": "/theme/abstract.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:abstract2",
+    "name": "Abstract (2)",
+    "bg_url": "/theme/abstract-1.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:abstract3",
+    "name": "Abstract (3)",
+    "bg_url": "/theme/abstract-2.jpeg",
+    "is_dark": true
+  },
+  {
+    "id": "theme:abstract4",
+    "name": "Abstract (4)",
+    "bg_url": "/theme/abstract-3.jpeg",
+    "is_dark": true
+  }
+]

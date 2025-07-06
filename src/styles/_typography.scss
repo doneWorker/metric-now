@@ -1,0 +1,50 @@
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+$font-sizes: (
+  xs: 10px,
+  sm: 12px,
+  base: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 20px,
+  "2xl": 24px,
+  "3xl": 30px,
+  "4xl": 36px,
+  "5xl": 48px,
+);
+
+@each $name, $size in $font-sizes {
+  .text-#{$name} {
+    font-size: $size;
+  }
+}
+
+.font-bold {
+  font-weight: bold;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+.overline {
+  text-decoration-line: overline;
+}
+.line-through {
+  text-decoration-line: line-through;
+}
+.no-underline {
+  text-decoration-line: none;
+}

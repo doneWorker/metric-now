@@ -1,0 +1,40 @@
+.transition-all {
+  transition: all 0.2s;
+}
+.scale-0 {
+  transform: scale(0);
+}
+.scale-100 {
+  transform: scale(1);
+}
+.active-scale-95:active {
+  transform: scale(0.95);
+}
+.hover-scale-95:hover {
+  transform: scale(0.95);
+}
+.-translate-x-100p {
+  transform: translateX(-100%);
+}
+.-translate-y-50p {
+  transform: translateY(-50%);
+}
+.translate-x-100p {
+  transform: translateX(100%);
+}
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 5s linear infinite;
+}

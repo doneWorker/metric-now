@@ -1,0 +1,19 @@
+@import url("./_spacing.scss");
+@import url("./_sizing.scss");
+@import url("./_appearance.scss");
+@import url("./_position.scss");
+@import url("./_box-model.scss");
+@import url("./_effects.scss");
+@import url("./_grid.scss");
+@import url("./_typography.scss");
+
+/* Variables */
+:root {
+  --body-bg: #f6f6f6;
+  --font-color: #333;
+  --font-color-secondary: #626060;
+  --badge-bg: #f6f6f6;
+  --badge-color: #868686;
+  --primary-color: #036cfc;
+  --primary-color-hover: #1456b3;
+}
